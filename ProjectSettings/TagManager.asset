@@ -8,6 +8,7 @@ TagManager:
   - ObjectPool
   - Enemy
   - EnemyLeader
+  - Level
   layers:
   - Default
   - TransparentFX

@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
 
     private int currentWaveIndex = 0;
     private float timeBetweenWaves = 5f;
-    private float waveCooldown = 0;
+    private float waveCooldown = 2f;
 
     void Update()
     {

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -14,6 +15,11 @@ public class Health : MonoBehaviour
     [SerializeField]
     AudioCue deathSFX;
 
+    [SerializeField]
+    FloatVariable score = null;
+
+    GameObject level;
+
     private float health;
     private bool hasExploded = false;
     private bool hasDied = false;
@@ -21,6 +27,7 @@ public class Health : MonoBehaviour
     void Awake()
     {
         health = startingHealth;
+        level = GameObject.FindGameObjectWithTag("Level");
     }
 
     void Update()
@@ -49,14 +56,23 @@ public class Health : MonoBehaviour
                 hasExploded = true;
             }
 
-
-            if (gameObject.CompareTag("EnemyLeader"))
+            if (gameObject.CompareTag("EnemyLeader") || gameObject.CompareTag("Player"))
             {
                 gameObject.GetComponent<Renderer>().enabled = false;
             } else
             {
                 Destroy(gameObject);
             }
+
+            if (!gameObject.CompareTag("Player"))
+            {
+                IncrementScore();
+            } else
+            {
+                StartCoroutine(LoadGameOver());
+            }
+
+            hasDied = true;
         }
     }
 
@@ -65,5 +81,20 @@ public class Health : MonoBehaviour
         var damageDealer = other.gameObject.GetComponent<DamageDealer>();
         health -= damageDealer.DamagePoints;
         damageDealer.OnHit();
+    }
+
+    private IEnumerator LoadGameOver()
+    {
+        yield return new WaitForSeconds(3);
+        level.GetComponent<Level>().LoadGameOver();
+    }
+
+
+
+    private void IncrementScore() {
+        if (score != null)
+        {
+            score.ApplyChange(50);
+        }
     }
 }
