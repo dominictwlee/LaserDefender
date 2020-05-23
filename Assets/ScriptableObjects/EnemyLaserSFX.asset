@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d05c76e642b70bf4e92062df4df9b7c3, type: 3}
+  m_Name: EnemyLaserSFX
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: bc788b5a96240694292be1b3819676dd, type: 3}
+  - {fileID: 8300000, guid: 80b183088e52ff544901cd6005932d1d, type: 3}
+  - {fileID: 8300000, guid: a48871b13d8851d46bc369fee0c90384, type: 3}
+  minVolume: 0.028
+  maxVolume: 0.078

@@ -178,6 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 2141224489600672156, guid: 1bf34165f1c7b804aa37de3be9f475d8, type: 3}
+  audioCue: {fileID: 0}
   projectileSpeed:
     UseConstant: 0
     ConstantValue: 0
@@ -195,4 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa9e7ebd74e50c5448fd1f03188345af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  startingHealth: 100
+  explosionVFX: {fileID: 1170567192047786, guid: dfbdf2134f769dc4486867bd0989e1f4,
+    type: 3}
+  deathSFX: {fileID: 11400000, guid: 68153437924a00c4eb2021885abff45a, type: 2}

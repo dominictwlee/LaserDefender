@@ -11,6 +11,9 @@ public class Health : MonoBehaviour
     [SerializeField]
     GameObject explosionVFX;
 
+    [SerializeField]
+    AudioCue deathSFX;
+
     private float health;
     private bool hasExploded = false;
     private bool hasDied = false;
@@ -42,9 +45,10 @@ public class Health : MonoBehaviour
             if (!hasExploded)
             {
                 Instantiate(explosionVFX, transform.position, transform.rotation);
+                deathSFX.PlayClipAtCameraMain();
+                hasExploded = true;
             }
 
-            hasExploded = true;
 
             if (gameObject.CompareTag("EnemyLeader"))
             {

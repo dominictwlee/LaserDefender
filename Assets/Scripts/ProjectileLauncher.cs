@@ -5,7 +5,11 @@ using UnityEngine;
 public class ProjectileLauncher : MonoBehaviour
 {
     [SerializeField]
-    private Laser prefab = null;
+    Laser prefab = null;
+
+    [SerializeField]
+    AudioCue audioCue;
+    
 
     [SerializeField]
     FloatReference projectileSpeed = null;
@@ -13,11 +17,14 @@ public class ProjectileLauncher : MonoBehaviour
     [SerializeField]
     int poolSize = 0;
 
-    private Pool pool;
+    Pool pool;
+
+    AudioSource audioSource = null;
 
     public void Awake()
     {
         pool = Pool.GetPool(prefab, poolSize);
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void Fire(Vector2 startPosition)
@@ -30,5 +37,10 @@ public class ProjectileLauncher : MonoBehaviour
         }
 
         laser.Move();
+
+        if (audioCue != null)
+        {
+            audioCue.Play(audioSource);
+        }
     }
 }
