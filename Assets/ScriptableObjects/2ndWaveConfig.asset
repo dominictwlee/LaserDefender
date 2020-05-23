@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a68327a54ee4c6541b346eca454bc74c, type: 3}
+  m_Name: 2ndWaveConfig
+  m_EditorClassIdentifier: 
+  pathPrefab: {fileID: 322525022572171874, guid: ac652692a9f9bf84c8e9f29b56f19a57,
+    type: 3}
+  enemyPrefab: {fileID: 6811962641787741235, guid: cb7c8d4a71a8d934c8d8e0765c2bc509,
+    type: 3}
+  timeBetweenSpawns:
+    UseConstant: 1
+    ConstantValue: 0.25
+    Variable: {fileID: 0}
+  spawnRandomFactor:
+    UseConstant: 1
+    ConstantValue: 0.3
+    Variable: {fileID: 0}
+  enemyCount: 4
+  moveSpeed:
+    UseConstant: 1
+    ConstantValue: 6
+    Variable: {fileID: 0}
