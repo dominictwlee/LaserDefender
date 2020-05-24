@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6811962641787741232}
   - component: {fileID: 7407552346197610472}
   - component: {fileID: 6811962641787741238}
-  - component: {fileID: 6195052892355277682}
+  - component: {fileID: -5306884694399941016}
   - component: {fileID: -7743195494450315356}
   - component: {fileID: 2050281128865142164}
   - component: {fileID: -1273791523052585596}
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 054e2b5a47e22894b944bf207a68f0a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6195052892355277682
+--- !u!114 &-5306884694399941016
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,10 +124,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6811962641787741235}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa9e7ebd74e50c5448fd1f03188345af, type: 3}
+  m_Script: {fileID: 11500000, guid: 65ae7484da08c7246b61e7a9095734ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 100
+  startingHealth:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 268cc7b251eff644c86d07703b9b6df6, type: 2}
   explosionVFX: {fileID: 1170567192047786, guid: dfbdf2134f769dc4486867bd0989e1f4,
     type: 3}
   deathSFX: {fileID: 11400000, guid: 68153437924a00c4eb2021885abff45a, type: 2}

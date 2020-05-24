@@ -4,13 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Health : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
     [SerializeField]
     FloatReference startingHealth = null;
 
-    [SerializeField]
-    FloatVariable health = null;
+    float health = 0;
 
     [SerializeField]
     GameObject explosionVFX;
@@ -18,15 +17,15 @@ public class Health : MonoBehaviour
     [SerializeField]
     AudioCue deathSFX;
 
-    GameObject level;
+    [SerializeField]
+    FloatVariable score = null;
 
     private bool hasExploded = false;
     private bool hasDied = false;
 
     void Awake()
     {
-        health.Value = startingHealth.Value;
-        level = GameObject.FindGameObjectWithTag("Level");
+        health = startingHealth.Value;
     }
 
     void Update()
@@ -46,7 +45,7 @@ public class Health : MonoBehaviour
             return;
         }
 
-        if (health.Value <= 0)
+        if (health <= 0)
         {
             if (!hasExploded)
             {
@@ -55,9 +54,15 @@ public class Health : MonoBehaviour
                 hasExploded = true;
             }
 
-            gameObject.GetComponent<Renderer>().enabled = false;
+            if (gameObject.CompareTag("EnemyLeader"))
+            {
+                gameObject.GetComponent<Renderer>().enabled = false;
+            } else
+            {
+                Destroy(gameObject);
+            }
 
-            StartCoroutine(LoadGameOver());
+            IncrementScore();
 
             hasDied = true;
         }
@@ -66,13 +71,14 @@ public class Health : MonoBehaviour
     private void DealDamage(Collider2D other)
     {
         var damageDealer = other.gameObject.GetComponent<DamageDealer>();
-        health.Value -= damageDealer.DamagePoints;
+        health -= damageDealer.DamagePoints;
         damageDealer.OnHit();
     }
 
-    private IEnumerator LoadGameOver()
-    {
-        yield return new WaitForSeconds(3);
-        level.GetComponent<Level>().LoadGameOver();
+    private void IncrementScore() {
+        if (score != null)
+        {
+            score.ApplyChange(50);
+        }
     }
 }

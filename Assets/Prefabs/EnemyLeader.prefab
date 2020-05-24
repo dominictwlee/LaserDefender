@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 5186099468705263732}
   - component: {fileID: 9204411575677606828}
   - component: {fileID: 5186099468705263730}
-  - component: {fileID: 5515068803516344118}
   - component: {fileID: 1007379881154816992}
   - component: {fileID: 361490568872198608}
   - component: {fileID: 84661038259380531}
+  - component: {fileID: 5569763515118715491}
   m_Layer: 9
   m_Name: EnemyLeader
   m_TagString: EnemyLeader
@@ -118,23 +118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 054e2b5a47e22894b944bf207a68f0a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5515068803516344118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5186099468705263735}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa9e7ebd74e50c5448fd1f03188345af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 150
-  explosionVFX: {fileID: 1170567192047786, guid: dfbdf2134f769dc4486867bd0989e1f4,
-    type: 3}
-  deathSFX: {fileID: 11400000, guid: 68153437924a00c4eb2021885abff45a, type: 2}
-  score: {fileID: 11400000, guid: 9002aa975fb75b4478ae982c565078bb, type: 2}
 --- !u!114 &1007379881154816992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,6 +246,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5569763515118715491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5186099468705263735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ae7484da08c7246b61e7a9095734ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 268cc7b251eff644c86d07703b9b6df6, type: 2}
+  explosionVFX: {fileID: 1170567192047786, guid: dfbdf2134f769dc4486867bd0989e1f4,
+    type: 3}
+  deathSFX: {fileID: 11400000, guid: 68153437924a00c4eb2021885abff45a, type: 2}
+  score: {fileID: 11400000, guid: 9002aa975fb75b4478ae982c565078bb, type: 2}
 --- !u!1001 &34594639751436646
 PrefabInstance:
   m_ObjectHideFlags: 0

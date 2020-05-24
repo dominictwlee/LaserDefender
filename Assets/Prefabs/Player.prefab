@@ -196,7 +196,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa9e7ebd74e50c5448fd1f03188345af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 100
+  startingHealth:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: d811262206be9794eb0fa8d16f7383af, type: 2}
+  health: {fileID: 11400000, guid: 05c6a87a81186b74db9d77543b127145, type: 2}
   explosionVFX: {fileID: 1170567192047786, guid: dfbdf2134f769dc4486867bd0989e1f4,
     type: 3}
   deathSFX: {fileID: 11400000, guid: 68153437924a00c4eb2021885abff45a, type: 2}

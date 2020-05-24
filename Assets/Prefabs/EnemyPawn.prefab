@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 2160750585079172126}
   - component: {fileID: 2160750585079172127}
   - component: {fileID: 2718095306525353927}
-  - component: {fileID: 1625037587485186909}
   - component: {fileID: 6340734444839884683}
   - component: {fileID: 6845606716324740539}
   - component: {fileID: 4640911323993665089}
+  - component: {fileID: -2840444168871193493}
   m_Layer: 9
   m_Name: EnemyPawn
   m_TagString: Untagged
@@ -102,23 +102,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.02}
   serializedVersion: 2
   m_Radius: 0.42
---- !u!114 &1625037587485186909
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2160750585079172124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa9e7ebd74e50c5448fd1f03188345af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 100
-  explosionVFX: {fileID: 1170567192047786, guid: dfbdf2134f769dc4486867bd0989e1f4,
-    type: 3}
-  deathSFX: {fileID: 11400000, guid: 68153437924a00c4eb2021885abff45a, type: 2}
-  score: {fileID: 11400000, guid: 9002aa975fb75b4478ae982c565078bb, type: 2}
 --- !u!114 &6340734444839884683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,3 +230,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-2840444168871193493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2160750585079172124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ae7484da08c7246b61e7a9095734ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 268cc7b251eff644c86d07703b9b6df6, type: 2}
+  explosionVFX: {fileID: 1170567192047786, guid: dfbdf2134f769dc4486867bd0989e1f4,
+    type: 3}
+  deathSFX: {fileID: 11400000, guid: 68153437924a00c4eb2021885abff45a, type: 2}
+  score: {fileID: 11400000, guid: 9002aa975fb75b4478ae982c565078bb, type: 2}
